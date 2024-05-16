@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        .content {
+            margin-left: 20px;
+        }
+
+        /* Apply navbar background color */
+        .navbar {
+            background-color: #1A4D2E; /* Assuming $green-700 translates to #1A4D2E */
+        }
+        
+
+        /* Apply button background color */
+        .maintenance-btn {
+            background-color: #1A4D2E; /* Assuming $green-700 translates to #1A4D2E */
+            color: #fff;
+            border: none;
+            outline: none;
+            font-size: 14px; /* Set the font size here */
+        }
+
+        .maintenance-btn:focus {
+            box-shadow: none;
+            outline: none; /* Remove the default outline */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <div class="navbar-brand">Website</div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="openBorrowBooksForm()">Borrow Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="content">
+            <h1>Welcome to our Website</h1>
+            <p>This is the home page content.</p>
+        </div>
+    </div>
+    <script>
+    function openBorrowBooksForm() {
+        window.location.href = "/borrowbooks";
+    }
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-+Cy+RHMDnoZwmt8Q5/Dwgs2l0/2l3IVNUvEtF7vFKk8Xmz3eMNL9zJnMMFAhsbo2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qIYRR2EA5ZfY+lniOaBf/+Ag3oB2y/ukGnd/iPcqV5/E2HxII33FCFkpbmy3+i5W" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    /* Custom styles */
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <% if notice.present? %>
+      <div class="alert alert-success" role="alert">
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <h1 class="text-center" style="font-size: 24px;">List Of Users</h1>
+
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Lastname</th>
+          <th scope="col">Firstname</th>
+          <th scope="col">User level</th>
+          <th scope="col">Username</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.lastname %></td>
+            <td><%= user.firstname %></td>
+            <td><%= user.user_level %></td>
+            <td><%= user.username %></td>
+            <td>
+              <%= link_to 'Show', user, class: "btn btn-primary btn-sm" %>
+              <%= link_to 'Edit', edit_user_path(user), class: "btn btn-secondary btn-sm" %>
+              <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure to Delete this User?' }, class: "btn btn-danger btn-sm" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New User', new_user_path, class: "btn btn-success" %>
+  </div>
+</body>
+</html>
